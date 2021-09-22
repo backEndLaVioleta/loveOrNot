@@ -23,8 +23,8 @@ class Margarita {
  // check even and odds
  evenOrOdds = (arr) =>  new Promise((res, rej) => {
      
-        arr.map((el) => (el[arr.length - 1] % 2 == 0) ? res(console.log(chalk.red('No me quiere'))) : 
-                                        rej(console.log(chalk.blue('Me quiere'))));
+        arr.map((el) => (el[arr.length - 1] % 2 == 0) ? (console.log(('No me quiere'))) : 
+                                                        (console.log(('Me quiere'))));
      
    
  })
