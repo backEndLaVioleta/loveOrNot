@@ -23,14 +23,15 @@ class Margarita {
  // check even and odds
  evenOrOdds = (arr) => new Promise((res, rej) => {
      let loves = "";
-     let lastOne = arr;
+     let lastOne = arr[arr.length - 1];
      console.log(arr);
         arr.map((el, ind) =>setTimeout(() => {
-            (el % 2 == 0) ?                               console.log((loves = 'No me quiere'))  : 
-            (el % 2 == 0 && el == arr[arr.length - 1]) ?  console.log(chalk.grey(loves = 'No me quiere')) :
-            (el % 2 != 0 && el == arr[arr.length - 1]) ?  console.log(chalk.blue(loves = 'Me quiere')) : 
-                                                          console.log((loves = 'Me quiere'));
-        }, (ind)*1500))
+            (el % 2 == 0 && el == lastOne) ?  console.log(chalk.red(loves = 'No me quiere')) :
+            (el % 2 !== 0 && el == lastOne) ? console.log(chalk.blue(loves = 'Me quiere')) :
+            (el % 2 == 0) ?  console.log((loves = 'No me quiere'))  :  
+            (el % 2 !== 0) ?console.log((loves = 'Me quiere')) : undefined;
+        
+        }, (ind)*1000))
 
     /* arr.map((el, ind) => {
             setTimeout(() => {
