@@ -21,18 +21,36 @@ class Margarita {
  allPetals = (num) => [...Array(num).keys()].map((el) => el + 1);
 
  // check even and odds
- evenOrOdds = (arr) =>  new Promise((res, rej) => {
-     
-        arr.map((el) => (el[arr.length - 1] % 2 == 0) ? (console.log(('No me quiere'))) : 
-                                                        (console.log(('Me quiere'))));
-     
-   
- })
+ evenOrOdds = (arr) => new Promise((res, rej) => {
+     let loves = "";
+     let lastOne = arr;
+     console.log(arr);
+        arr.map((el, ind) =>setTimeout(() => {
+            (el % 2 == 0) ?                               console.log((loves = 'No me quiere'))  : 
+            (el % 2 == 0 && el == arr[arr.length - 1]) ?  console.log(chalk.grey(loves = 'No me quiere')) :
+            (el % 2 != 0 && el == arr[arr.length - 1]) ?  console.log(chalk.blue(loves = 'Me quiere')) : 
+                                                          console.log((loves = 'Me quiere'));
+        }, (ind)*1500))
+
+    /* arr.map((el, ind) => {
+            setTimeout(() => {
+                if(el % 2 == 0) {
+                    console.log((loves = 'No me quiere'));
+               } else {
+                   console.log((loves = 'Me quiere'));
+               }
+               
+            }, ind*1500) */
+    
+ });
+ 
 }
 
 let myMargarita = new Margarita;
-
-console.log(myMargarita.evenOrOdds(myMargarita.allPetals(myMargarita.howManyPetals())));
+/* setInterval(() => {
+    console.log(myMargarita.evenOrOdds(myMargarita.allPetals(myMargarita.howManyPetals())));
+}, 1000); */
+(myMargarita.evenOrOdds(myMargarita.allPetals(myMargarita.howManyPetals())));
 export default Margarita;
 
 /**
