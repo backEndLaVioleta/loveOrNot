@@ -27,7 +27,9 @@ describe('class Margarita', ()=>{
        test('Margarita should have a function called "allPetals"', ()=>{
            expect(myPromises.allPetals()).toBeDefined();
        });
-       test('Margarita should have a function called ')
+      /*  test('Margarita should have a function called "evenOrOdds"', () => {
+           expect(myPromises.evenOrOdds()).toBeDefined();
+       }); */
    });
 // howManyPetals
    describe('HowManyPetals', ()=>{
