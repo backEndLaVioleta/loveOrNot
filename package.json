@@ -27,6 +27,7 @@
     "verbose": true
   },
   "dependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^4.1.2",
+    "nanocolors": "^0.1.12"
   }
 }
